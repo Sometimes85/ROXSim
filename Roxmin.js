@@ -62,7 +62,7 @@ const tdValHaste = new TD(1,1,"Center");
 const tdValCrit = new TD(1,1,"Center");
 const tdValAntiCrit = new TD(1,1,"Center");
 
-const encAttr = new EnchantAttribute("test");
+const encAttr = new EnchantAttribute("test","Decoration");
 
 function EnchantDb()
 {
@@ -70,63 +70,555 @@ function EnchantDb()
     {
         Weapon:
         {
-            Attribute:["Str","Agi","Vit","Int","Dex","Luk"],
-            Value:{Str:6,Agi:6,Vit:6,Int:6,Dex:6,Luk:6},
-            Type:{Str:"unit",Agi:"unit",Vit:"unit",Int:"unit",Dex:"unit",Luk:"unit"},
+            Attribute:
+            [
+                "Str",
+                "Agi",
+                "Vit",
+                "Int",
+                "Dex",
+                "Luk"
+            ],
+            Value:
+            {
+                Str:6,
+                Agi:6,
+                Vit:6,
+                Int:6,
+                Dex:6,
+                Luk:6
+            },
+            Type:
+            {
+                Str:"unit",
+                Agi:"unit",
+                Vit:"unit",
+                Int:"unit",
+                Dex:"unit",
+                Luk:"unit"
+            },
         },
         Clothes:
         {
-            Attribute:["Str","Agi","Vit","Int","Dex","Luk"],
-            Value:{Str:2,Agi:2,Vit:2,Int:2,Dex:2,Luk:2},
-            Type:{Str:"unit",Agi:"unit",Vit:"unit",Int:"unit",Dex:"unit",Luk:"unit"},
+            Attribute:
+            [
+                "Str",
+                "Agi",
+                "Vit",
+                "Int",
+                "Dex",
+                "Luk"
+            ],
+            Value:
+            {
+                Str:2,
+                Agi:2,
+                Vit:2,
+                Int:2,
+                Dex:2,
+                Luk:2
+            },
+            Type:
+            {
+                Str:"unit",
+                Agi:"unit",
+                Vit:"unit",
+                Int:"unit",
+                Dex:"unit",
+                Luk:"unit"
+            },
         },
         Decoration:
         {
-            Attribute:["Str","Agi","Vit","Int","Dex","Luk"],
-            Value:{Str:2,Agi:2,Vit:2,Int:2,Dex:2,Luk:2},
-            Type:{Str:"unit",Agi:"unit",Vit:"unit",Int:"unit",Dex:"unit",Luk:"unit"},
+            Attribute:
+            [
+                "Str",
+                "Agi",
+                "Vit",
+                "Int",
+                "Dex",
+                "Luk"
+            ],
+            Value:
+            {
+                Str:2,
+                Agi:2,
+                Vit:2,
+                Int:2,
+                Dex:2,
+                Luk:2
+            },
+            Type:
+            {
+                Str:"unit",
+                Agi:"unit",
+                Vit:"unit",
+                Int:"unit",
+                Dex:"unit",
+                Luk:"unit"
+            },
         },
     };
     this.Moroc = 
     {
         Weapon:
         {
-            Attribute:["P_Atk","M_Atk","P_Pen","M_Pen","P_Dmg_Bonus","M_Dmg_Bonus"],
-            Value:{P_Atk:6,M_Atk:6,P_Pen:6,M_Pen:6,P_Dmg_Bonus:6,M_Dmg_Bonus:6},
-            Type:{P_Atk:"unit",M_Atk:"unit",P_Pen:"unit",M_Pen:"unit",P_Dmg_Bonus:"unit",M_Dmg_Bonus:"unit"},
+            Attribute:
+            [
+                "P_Atk",
+                "M_Atk",
+                "P_Pen",
+                "M_Pen",
+                "P_Dmg_Bonus",
+                "M_Dmg_Bonus"
+            ],
+            Value:
+            {
+                P_Atk:54,
+                M_Atk:54,
+                P_Pen:54,
+                M_Pen:54,
+                P_Dmg_Bonus:162,
+                M_Dmg_Bonus:162
+            },
+            Type:
+            {
+                P_Atk:"unit",
+                M_Atk:"unit",
+                P_Pen:"unit",
+                M_Pen:"unit",
+                P_Dmg_Bonus:"unit",
+                M_Dmg_Bonus:"unit"
+            },
         },
         Clothes:
         {
-            Attribute:["P_Def","M_Def","Max_HP","Max_SP","P_Dmg_Reduct","M_Dmg_Reduct"],
-            Value:{P_Def:6,M_Def:6,Max_HP:6,Max_SP:6,P_Dmg_Reduct:6,M_Dmg_Reduct:6},
-            Type:{P_Def:"unit",M_Def:"unit",Max_HP:"unit",Max_SP:"unit",P_Dmg_Reduct:"unit",M_Dmg_Reduct:"unit"},
+            Attribute:
+            [
+                "P_Def",
+                "M_Def",
+                "Max_HP",
+                "Max_SP",
+                "P_Dmg_Reduct",
+                "M_Dmg_Reduct"
+            ],
+            Value:
+            {
+                P_Def:18,
+                M_Def:18,
+                Max_HP:1080,
+                Max_SP:90,
+                P_Dmg_Reduct:54,
+                M_Dmg_Reduct:54
+            },
+            Type:
+            {
+                P_Def:"unit",
+                M_Def:"unit",
+                Max_HP:"unit",
+                Max_SP:"unit",
+                P_Dmg_Reduct:"unit",
+                M_Dmg_Reduct:"unit"
+            },
         },
         Decoration:
         {
-            Attribute:["ASPD","Haste","Hit","Crit","Flee","Anti_Crit"],
-            Value:{ASPD:6,Haste:6,Hit:6,Crit:6,Flee:6,Anti_Crit:6},
-            Type:{ASPD:"unit",Haste:"unit",Hit:"unit",Crit:"unit",Flee:"unit",Anti_Crit:"unit"},
+            Attribute:
+            [
+                "ASPD",
+                "Haste",
+                "Hit",
+                "Crit",
+                "Flee",
+                "Anti_Crit"
+            ],
+            Value:
+            {
+                ASPD:18,
+                Haste:18,
+                Hit:18,
+                Crit:18,
+                Flee:18,
+                Anti_Crit:18
+            },
+            Type:
+            {
+                ASPD:"unit",
+                Haste:"unit",
+                Hit:"unit",
+                Crit:"unit",
+                Flee:"unit",
+                Anti_Crit:"unit"
+            },
         },
     };
     this.Izlude = 
     {
         Weapon:
         {
-            Attribute:["BonusToAngle","BonusToDemon","BonusToFormless","BonusToInsect","BonusToFish","BonusToDemiHuman","BonusToUndead","BonusToDragon","BonusToPlant","BonusToBrute"],
-                Value:{BonusToAngle:3,BonusToDemon:3,BonusToFormless:3,BonusToInsect:3,BonusToFish:3,BonusToDemiHuman:3,BonusToUndead:3,BonusToDragon:3,BonusToPlant:3,BonusToBrute:3},
-            Type:{BonusToAngle:"percent",BonusToDemon:"percent",BonusToFormless:"percent",BonusToInsect:"percent",BonusToFish:"percent",BonusToDemiHuman:"percent",BonusToUndead:"percent",BonusToDragon:"percent",BonusToPlant:"percent",BonusToBrute:"percent"},
+            Attribute:
+            [
+                "BonusDmgToAngle",
+                "BonusDmgToDemon",
+                "BonusDmgToFormless",
+                "BonusDmgToInsect",
+                "BonusDmgToFish",
+                "BonusDmgToDemiHuman",
+                "BonusDmgToUndead",
+                "BonusDmgToDragon",
+                "BonusDmgToPlant",
+                "BonusDmgToBrute"
+            ],
+            Value:
+            {
+                BonusDmgToAngle:3,
+                BonusDmgToDemon:3,
+                BonusDmgToFormless:3,
+                BonusDmgToInsect:3,
+                BonusDmgToFish:3,
+                BonusDmgToDemiHuman:3,
+                BonusDmgToUndead:3,
+                BonusDmgToDragon:3,
+                BonusDmgToPlant:3,
+                BonusDmgToBrute:3
+            },
+            Type:
+            {
+                BonusDmgToAngle:"%",
+                BonusDmgToDemon:"%",
+                BonusDmgToFormless:"%",
+                BonusDmgToInsect:"%",
+                BonusDmgToFish:"%",
+                BonusDmgToDemiHuman:"%",
+                BonusDmgToUndead:"%",
+                BonusDmgToDragon:"%",
+                BonusDmgToPlant:"%",
+                BonusDmgToBrute:"%"
+            },
         },
         Clothes:
         {
-            Attribute:["P_Def","M_Def","Max_HP","Max_SP","P_Dmg_Reduct","M_Dmg_Reduct"],
-            Value:{P_Def:6,M_Def:6,Max_HP:6,Max_SP:6,P_Dmg_Reduct:6,M_Dmg_Reduct:6},
-            Type:{P_Def:"unit",M_Def:"unit",Max_HP:"unit",Max_SP:"unit",P_Dmg_Reduct:"unit",M_Dmg_Reduct:"unit"},
+            Attribute:
+            [
+                "ReductDmgFromAngle",
+                "ReductDmgFromDemon",
+                "ReductDmgFromFormless",
+                "ReductDmgFromInsect",
+                "ReductDmgFromFish",
+                "ReductDmgFromDemiHuman",
+                "ReductDmgFromUndead",
+                "ReductDmgFromDragon",
+                "ReductDmgFromPlant",
+                "ReductDmgFromBrute"
+            ],
+            Value:
+            {
+                ReductDmgFromAngle:1,
+                ReductDmgFromDemon:1,
+                ReductDmgFromFormless:1,
+                ReductDmgFromInsect:1,
+                ReductDmgFromFish:1,
+                ReductDmgFromDemiHuman:1,
+                ReductDmgFromUndead:1,
+                ReductDmgFromDragon:1,
+                ReductDmgFromPlant:1,
+                ReductDmgFromBrute:1
+            },
+            Type:
+            {
+                ReductDmgFromAngle:"%",
+                ReductDmgFromDemon:"%",
+                ReductDmgFromFormless:"%",
+                ReductDmgFromInsect:"%",
+                ReductDmgFromFish:"%",
+                ReductDmgFromDemiHuman:"%",
+                ReductDmgFromUndead:"%",
+                ReductDmgFromDragon:"%",
+                ReductDmgFromPlant:"%",
+                ReductDmgFromBrute:"%"
+            },
         },
         Decoration:
         {
-            Attribute:["ASPD","Haste","Hit","Crit","Flee","Anti_Crit"],
-            Value:{ASPD:6,Haste:6,Hit:6,Crit:6,Flee:6,Anti_Crit:6},
-            Type:{ASPD:"unit",Haste:"unit",Hit:"unit",Crit:"unit",Flee:"unit",Anti_Crit:"unit"},
+            Attribute:
+            [
+                "BonusDmgToLarge",
+                "BonusDmgToMedium",
+                "BonusDmgToSmall",
+                "FireEnchant",
+                "WaterEnchant",
+                "WindEnchant",
+                "EarthEnchant",
+                "PoisonEnchant",
+                "HolyEnchant",
+                "GhostEnchant",
+            ],
+            Value:
+            {
+                BonusDmgToLarge:1,
+                BonusDmgToMedium:1,
+                BonusDmgToSmall:1,
+                FireEnchant:1,
+                WaterEnchant:1,
+                WindEnchant:1,
+                EarthEnchant:1,
+                PoisonEnchant:1,
+                HolyEnchant:1,
+                GhostEnchant:1
+            },
+            Type:
+            {
+                BonusDmgToLarge:"%",
+                BonusDmgToMedium:"%",
+                BonusDmgToSmall:"%",
+                FireEnchant:"%",
+                WaterEnchant:"%",
+                WindEnchant:"%",
+                EarthEnchant:"%",
+                PoisonEnchant:"%",
+                HolyEnchant:"%",
+                GhostEnchant:"%"
+            },
+        },
+    };
+    this.Alberta = 
+    {
+        Weapon:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Clothes:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Decoration:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+    };
+    this.Payon = 
+    {
+        Weapon:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Clothes:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Decoration:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+    };
+    this.Geffen = 
+    {
+        Weapon:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Clothes:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Decoration:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+    };
+    this.GlastHiem = 
+    {
+        Weapon:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Clothes:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Decoration:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+    };
+    this.Comodo = 
+    {
+        Weapon:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Clothes:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
+        },
+        Decoration:
+        {
+            Attribute:
+            [
+
+            ],
+            Value:
+            {
+
+            },
+            Type:
+            {
+
+            },
         },
     };
 }
@@ -161,20 +653,33 @@ function StatPoint(id,size,disable)
     this.LUK = new TextBox("cluk"+id,size,"center",disable);
 }
 
-function EnchantAttribute(id)
+function EnchantAttribute(id,equiptype)
 {
-    this.Town = new Selecter("eEntn"+id,"90px","center");
-    this.Attribute = new Selecter("eEnAttr"+id,"100px","center");
+    this.EquipType = equiptype;
+    this.Town = new Selecter("eEntn"+id,"100px","center");
+    this.Attribute = new Selecter("eEnAttr"+id,"180px","center");
     this.Lv = new Selecter("eEnlv"+id,"50px","center");
-    this.Value = new TextBox("eEnVal"+id,"45px","center", true);
-    this.Type = new TextBox("eEnType"+id,"45px","center", true);
-    this.Town.AddList(["Prontera","Moroc","Izlude","Alberta","Payon","Geffen","GlastHiem"]);
+    this.Value = new TextBox("eEnVal"+id,"55px","center", true);
+    this.Type = new TextBox("eEnType"+id,"55px","center", true);
+    this.Town.AddList(["Prontera","Moroc","Izlude","Alberta","Payon","Geffen","GlastHiem","Comodo"]);
     this.Lv.AddList(["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]);
     this.Attribute.AddList(encDatabase["Prontera"]["Weapon"]["Attribute"]);
     this.Town["Element"].addEventListener("change",()=>
     {
         this.Attribute.ClearItem();
-        this.Attribute.AddList(encDatabase[this.Town["Element"].value]["Weapon"]["Attribute"]);
+        this.Attribute.AddList(encDatabase[this.Town["Element"].value][this.EquipType]["Attribute"]);
+        this.Value["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Value"][this.Attribute["Element"].value] * this.Lv["Element"].value;
+        this.Type["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Type"][this.Attribute["Element"].value];
+    });
+    this.Attribute["Element"].addEventListener("change",()=>
+    {
+        this.Value["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Value"][this.Attribute["Element"].value] * this.Lv["Element"].value;
+        this.Type["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Type"][this.Attribute["Element"].value];
+    });
+    this.Lv["Element"].addEventListener("change",()=>
+    {
+        this.Value["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Value"][this.Attribute["Element"].value] * this.Lv["Element"].value;
+        this.Type["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Type"][this.Attribute["Element"].value];
     });
 }
 
@@ -487,8 +992,8 @@ function Onload()
     main.appendChild(encAttr.Town["Element"]);
     main.appendChild(encAttr.Attribute["Element"]);
     main.appendChild(encAttr.Lv["Element"]);
-    main.appendChild(encAttr.Type["Element"]);
     main.appendChild(encAttr.Value["Element"]);
-    alert(encDatabase[encAttr.Town["Element"].value]["Decoration"]["Value"][encAttr.Attribute["Element"].value])
+    main.appendChild(encAttr.Type["Element"]);
+
 }
 
