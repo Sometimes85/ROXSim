@@ -868,8 +868,8 @@ function EnchantDb()
                 "PVP_DebuffResist",
                 "PVP_PDmgBonus",
                 "PVP_MDmgBonus",
-                "FnlPDmgBonus",
-                "FnlMDmgBonus"
+                "PVP_FnlPDmgBonus",
+                "PVP_FnlMDmgBonus"
             ],
             Value:
             {
@@ -881,8 +881,8 @@ function EnchantDb()
                 PVP_DebuffResist:0.7,
                 PVP_PDmgBonus:42,
                 PVP_MDmgBonus:42,
-                FnlPDmgBonus:0.7,
-                FnlMDmgBonus:0.7
+                PVP_FnlPDmgBonus:0.7,
+                PVP_FnlMDmgBonus:0.7
             },
             Type:
             {
@@ -894,8 +894,8 @@ function EnchantDb()
                 PVP_DebuffResist:"%",
                 PVP_PDmgBonus:"point",
                 PVP_MDmgBonus:"point",
-                FnlPDmgBonus:"%",
-                FnlMDmgBonus:"%"
+                PVP_FnlPDmgBonus:"%",
+                PVP_FnlMDmgBonus:"%"
             },
         },
     };
