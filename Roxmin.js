@@ -905,72 +905,144 @@ function EnchantDb()
         {
             Attribute:
             [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "Str",
+                "Agi",
+                "Int",
+                "Dex",
+                "CriDmgBonus",
+                "FnlPPen",
+                "FnlMPen",
+                "PVP_PDmgBonus",
+                "PVP_MDmgBonus",
+                "PVP_FnlPDmgBonus",
+                "PVP_FnlMDmgBonus"
             ],
             Value:
             {
-
+                Str:24,
+                Agi:24,
+                Int:24,
+                Dex:24,
+                CriDmgBonus:9.6,
+                FnlPPen:4.8,
+                FnlMPen:4.8,
+                PVP_PDmgBonus:144,
+                PVP_MDmgBonus:144,
+                PVP_FnlPDmgBonus:2.4,
+                PVP_FnlMDmgBonus:2.4
             },
             Type:
             {
-
+                Str:"point",
+                Agi:"point",
+                Int:"point",
+                Dex:"point",
+                CriDmgBonus:"%",
+                FnlPPen:"%",
+                FnlMPen:"%",
+                PVP_PDmgBonus:"point",
+                PVP_MDmgBonus:"point",
+                PVP_FnlPDmgBonus:"%",
+                PVP_FnlMDmgBonus:"%"
             },
         },
         Clothes:
         {
             Attribute:
             [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "Str",
+                "Vit",
+                "Int",
+                "Dex",
+                "FnlPDef",
+                "FnlMDef",
+                "PVP_PDmgReduct",
+                "PVP_MDmgReduct",
+                "PVP_FnlPDmgReduct",
+                "PVP_FnlMDmgReduct"
             ],
             Value:
             {
-
+                Str:8,
+                Vit:8,
+                Int:8,
+                Dex:8,
+                FnlPDef:1.6,
+                FnlMDef:1.6,
+                PVP_PDmgReduct:48,
+                PVP_MDmgReduct:48,
+                PVP_FnlPDmgReduct:1.2,
+                PVP_FnlMDmgReduct:1.2
             },
             Type:
             {
-
+                Str:"point",
+                Vit:"point",
+                Int:"point",
+                Dex:"point",
+                FnlPDef:"%",
+                FnlMDef:"%",
+                PVP_PDmgReduct:"point",
+                PVP_MDmgReduct:"point",
+                PVP_FnlPDmgReduct:"%",
+                PVP_FnlMDmgReduct:"%"
             },
         },
         Decoration:
         {
             Attribute:
             [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "FireEnchant",
+                "WaterEnchant",
+                "WindEnchant",
+                "EarthEnchant",
+                "PoisonEnchant",
+                "HolyEnchant",
+                "GhostEnchant",
+                "PVP_PDmgReduct",
+                "PVP_MDmgReduct",
+                "PVP_FnlPDmgReduct",
+                "PVP_FnlMDmgReduct",
+                "PVP_PDmgBonus",
+                "PVP_MDmgBonus",
+                "PVP_PFnlDmgBonus",
+                "PVP_MFnlDmgBonus"
             ],
             Value:
             {
-
+                FireEnchant:2,
+                WaterEnchant:2,
+                WindEnchant:2,
+                EarthEnchant:2,
+                PoisonEnchant:2,
+                HolyEnchant:2,
+                GhostEnchant:2,
+                PVP_PDmgReduct:48,
+                PVP_MDmgReduct:48,
+                PVP_FnlPDmgReduct:1.2,
+                PVP_FnlMDmgReduct:1.2,
+                PVP_PDmgBonus:48,
+                PVP_MDmgBonus:48,
+                PVP_PFnlDmgBonus:0.8,
+                PVP_MFnlDmgBonus:0.8
             },
             Type:
             {
-
+                FireEnchant:"%",
+                WaterEnchant:"%",
+                WindEnchant:"%",
+                EarthEnchant:"%",
+                PoisonEnchant:"%",
+                HolyEnchant:"%",
+                GhostEnchant:"%",
+                PVP_PDmgReduct:"point",
+                PVP_MDmgReduct:"point",
+                PVP_FnlPDmgReduct:"%",
+                PVP_FnlMDmgReduct:"%",
+                PVP_PDmgBonus:"point",
+                PVP_MDmgBonus:"point",
+                PVP_PFnlDmgBonus:"%",
+                PVP_MFnlDmgBonus:"%"
             },
         },
     };
@@ -1021,17 +1093,17 @@ function EnchantAttribute(id,equiptype)
     {
         this.Attribute.ClearItem();
         this.Attribute.AddList(encDatabase[this.Town["Element"].value][this.EquipType]["Attribute"]);
-        this.Value["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Value"][this.Attribute["Element"].value] * this.Lv["Element"].value;
+        this.Value["Element"].value = (encDatabase[this.Town["Element"].value][this.EquipType]["Value"][this.Attribute["Element"].value] * this.Lv["Element"].value).toFixed(2);
         this.Type["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Type"][this.Attribute["Element"].value];
     });
     this.Attribute["Element"].addEventListener("change",()=>
     {
-        this.Value["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Value"][this.Attribute["Element"].value] * this.Lv["Element"].value;
+        this.Value["Element"].value = (encDatabase[this.Town["Element"].value][this.EquipType]["Value"][this.Attribute["Element"].value] * this.Lv["Element"].value).toFixed(2);
         this.Type["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Type"][this.Attribute["Element"].value];
     });
     this.Lv["Element"].addEventListener("change",()=>
     {
-        this.Value["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Value"][this.Attribute["Element"].value] * this.Lv["Element"].value;
+        this.Value["Element"].value = (encDatabase[this.Town["Element"].value][this.EquipType]["Value"][this.Attribute["Element"].value] * this.Lv["Element"].value).toFixed(2);
         this.Type["Element"].value = encDatabase[this.Town["Element"].value][this.EquipType]["Type"][this.Attribute["Element"].value];
     });
 }
@@ -1118,11 +1190,21 @@ function Selecter(id,width,textAlign)
     };
 }
 
+function Span()
+{
+    this.Element = document.createElement("span");
+}
+
 function Span(id,textAlign)
 {
     this.Element = document.createElement("span");
     this.Element.id = id;
     this.Element.style.textAlign = textAlign;
+}
+
+function Div()
+{
+    this.Element = document.createElement("div");
 }
 
 function Div(id,textAlign)
